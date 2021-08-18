@@ -103,19 +103,13 @@
             android:layout_marginTop="20dp"
             android:text="@string/alarm" />
 
-        <EditText
-            android:id="@+id/Alarm"
+        <Spinner
+            android:id="@+id/alarmSpinner"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/rounded_white_card"
-            android:drawableStart="@drawable/ic_task"
-            android:drawablePadding="8dp"
             android:fontFamily="@font/roboto"
-            android:hint="12.00 AM"
-            android:importantForAutofill="no"
-            android:inputType="time"
-            android:paddingHorizontal="10dp"
             android:textColor="@color/color_black"
             android:textColorHint="@color/color_hint"
             android:textSize="14sp" />

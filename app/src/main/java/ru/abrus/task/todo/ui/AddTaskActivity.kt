@@ -3,6 +3,9 @@ package ru.abrus.task.todo.ui
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
@@ -14,6 +17,7 @@ import ru.abrus.task.todo.utils.Constants
 import java.util.*
 import javax.inject.Inject
 
+
 @AndroidEntryPoint
 class AddTaskActivity() : AppCompatActivity() {
 
@@ -22,7 +26,7 @@ class AddTaskActivity() : AppCompatActivity() {
     @Inject
     lateinit var calendar: Calendar
 
-    private var task = TaskEntity(0, "", "", "", Constants.BEFORE_15_MIN)
+    private var task = TaskEntity(0, "", "", "", Constants.AT_TIME)
 
     private val dateWatcher by lazy {
         DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
@@ -49,6 +53,35 @@ class AddTaskActivity() : AppCompatActivity() {
         initListeners()
 
         initClicks()
+
+        initSpinner()
+    }
+
+    private fun initSpinner() {
+        val ad = ArrayAdapter<Any?>(
+            this,
+            android.R.layout.simple_spinner_item,
+            Constants.alarmTexts as List<Any?>)
+
+        ad.setDropDownViewResource(
+            android.R.layout
+                .simple_spinner_dropdown_item);
+
+        alarmSpinner.adapter = ad
+        alarmSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long,
+            ) {
+                task.alarmType = position
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+
+        }
     }
 
     private fun initClicks() {
@@ -115,6 +148,7 @@ class AddTaskActivity() : AppCompatActivity() {
 
         timeEdt.hint = String.format("%s:%s",
             calendar.get(Calendar.HOUR_OF_DAY),
-            calendar.get(Calendar.MINUTE))
+            with(calendar.get(Calendar.MINUTE)) { if (this < 10) "0$this" else this }
+        )
     }
 }
