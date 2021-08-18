@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TodoTask</string>
+    <string name="today_nschedule">Today\nSchedule</string>
+    <string name="s_task_today">%s Task today</string>
 </resources>

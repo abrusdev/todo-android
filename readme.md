@@ -1,6 +1,6 @@
 # Todo App
 
-Todo App - Smooth UI with a lot of functionalities
+Todo App - smooth UI with a lot of functionalities
 
 Technologies:
 ------
