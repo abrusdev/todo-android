@@ -7,6 +7,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import ru.abrus.task.todo.storage.AppDatabase
+import ru.abrus.task.todo.storage.TaskDao
 import javax.inject.Singleton
 
 @Module
@@ -17,6 +18,12 @@ class DbModule {
     @Provides
     fun provideAppDatabase(@ApplicationContext appContext: Context): AppDatabase {
         return AppDatabase.getInstance(appContext)
+    }
+
+    @Singleton
+    @Provides
+    fun provideDao(database: AppDatabase): TaskDao {
+        return database.taskDao()
     }
 
 }

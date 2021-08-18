@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "task")
 data class TaskEntity(
     @PrimaryKey(autoGenerate = true) val uid: Int,
-    @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "date") val date: String,
-    @ColumnInfo(name = "time") val time: String,
+    @ColumnInfo(name = "name") var name: String,
+    @ColumnInfo(name = "date") var date: String,
+    @ColumnInfo(name = "time") var time: String,
     @ColumnInfo(name = "alarm") val alarmType: Int,
 )

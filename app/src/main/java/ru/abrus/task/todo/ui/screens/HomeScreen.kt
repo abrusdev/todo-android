@@ -6,7 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.screen_home.*
-import ru.abrus.task.todo.AddTaskActivity
+import ru.abrus.task.todo.ui.AddTaskActivity
 import ru.abrus.task.todo.R
 
 @AndroidEntryPoint
