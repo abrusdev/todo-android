@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_add_task.*
+import kotlinx.android.synthetic.main.activity_edit_task.*
 import ru.abrus.task.todo.R
 import ru.abrus.task.todo.storage.TaskEntity
 import ru.abrus.task.todo.utils.Constants
@@ -49,7 +49,7 @@ class EditTaskActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_task)
+        setContentView(R.layout.activity_edit_task)
 
         initDefaultTime()
 
