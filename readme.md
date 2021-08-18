@@ -7,6 +7,7 @@ Technologies:
 * Kotlin
 * Hilt Dependency Injection
 * Room Database
+* Navigation Graph
 * Custom views
 
 ![](static/preview.png)

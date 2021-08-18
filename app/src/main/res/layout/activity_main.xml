@@ -1,114 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/backStyle"
     tools:context=".MainActivity">
 
-    <androidx.core.widget.NestedScrollView style="@style/screenStyle">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:layout_weight="1"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/main_nav_graph" />
 
-        <LinearLayout
-            style="@style/screenStyle"
-            android:padding="12dp">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_rounded_white_card"
+        app:labelVisibilityMode="selected"
+        app:menu="@menu/main_menu"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:id="@+id/dateWeek"
-                    style="@style/boldTextStyle"
-                    android:textColor="@color/color_primary_dark"
-                    app:layout_constraintBottom_toTopOf="@id/todayFullDate"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Thursday" />
-
-                <TextView
-                    android:id="@+id/todayFullDate"
-                    style="@style/textStyle"
-                    android:alpha="0.7"
-                    android:textColor="@color/color_grey"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/dateWeek"
-                    tools:text="03 June 2021" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/logo"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="bottom">
-
-                <TextView
-                    style="@style/boldTextStyle"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:lineHeight="26sp"
-                    android:text="@string/today_nschedule"
-                    android:textColor="@color/color_black"
-                    android:textSize="20sp"
-                    tools:ignore="UnusedAttribute" />
-
-                <TextView
-                    style="@style/boldTextStyle"
-                    android:text="@string/s_task_today"
-                    android:textColor="@color/color_primary"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <com.lijiankun24.shadowlayout.ShadowLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:shadowColor="@color/color_primary"
-                app:shadowDx="0dp"
-                app:shadowDy="10dp"
-                app:shadowRadius="4dp"
-                app:shadowShape="rectangle">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_primary_gradient_card"
-                    android:clipToPadding="false"
-                    android:nestedScrollingEnabled="false"
-                    android:padding="2dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:itemCount="2"
-                    tools:listitem="@layout/item_task" />
-
-            </com.lijiankun24.shadowlayout.ShadowLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:nestedScrollingEnabled="false"
-                android:padding="2dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:itemCount="5"
-                tools:listitem="@layout/item_task" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
-    <ImageButton
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
-        android:background="@drawable/circle_primary_gradient_card"
-        tools:ignore="ContentDescription" />
-</RelativeLayout>
+</LinearLayout>

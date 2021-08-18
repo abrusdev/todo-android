@@ -2,4 +2,7 @@
     <string name="app_name">TodoTask</string>
     <string name="today_nschedule">Today\nSchedule</string>
     <string name="s_task_today">%s Task today</string>
+    <string name="home">Home</string>
+    <string name="proceeding">Proceeding</string>
+    <string name="done">Done</string>
 </resources>
