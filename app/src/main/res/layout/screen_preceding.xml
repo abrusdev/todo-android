@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/backStyle"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        style="@style/screenStyle"
+        android:padding="12dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:padding="2dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_task" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

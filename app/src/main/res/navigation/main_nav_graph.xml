@@ -10,4 +10,16 @@
         android:name="ru.abrus.task.todo.ui.screens.HomeScreen"
         android:label="HomeScreen"
         tools:layout="@layout/screen_home"/>
+    <fragment
+        android:id="@+id/precedingScreen"
+        android:name="ru.abrus.task.todo.ui.screens.PrecedingScreen"
+        android:label="PrecedingScreen"
+        tools:layout="@layout/screen_preceding"/>
+    <fragment
+        android:id="@+id/proceedScreen"
+        android:name="ru.abrus.task.todo.ui.screens.ProceedScreen"
+        android:label="ProceedScreen"
+        tools:layout="@layout/screen_proceed"/>
+
+
 </navigation>

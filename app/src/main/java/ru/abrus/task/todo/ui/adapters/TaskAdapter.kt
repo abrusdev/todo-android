@@ -11,6 +11,7 @@ import ru.abrus.task.todo.R
 import ru.abrus.task.todo.storage.TaskEntity
 
 class TaskAdapter(
+    private val onNextClicked: (Int) -> Unit,
     private val onActiveChanged: (Int, Boolean) -> Unit,
 ) : RecyclerView.Adapter<ViewHolder>() {
 
@@ -37,14 +38,18 @@ class TaskAdapter(
                 taskName.setTextColor(getColor(context, R.color.color_white))
                 taskDate.setTextColor(getColor(context, R.color.color_white))
 
-                next.setColorFilter(ContextCompat.getColor(context, R.color.color_white), android.graphics.PorterDuff.Mode.SRC_IN)
+                next.setColorFilter(getColor(context, R.color.color_white), android.graphics.PorterDuff.Mode.SRC_IN)
                 taskActive.buttonTintList = ColorStateList.valueOf(getColor(context, R.color.color_white))
             } else {
                 taskName.setTextColor(getColor(context, R.color.color_black))
                 taskDate.setTextColor(getColor(context, R.color.color_black))
 
-                next.setColorFilter(ContextCompat.getColor(context, R.color.color_black), android.graphics.PorterDuff.Mode.SRC_IN)
+                next.setColorFilter(getColor(context, R.color.color_black), android.graphics.PorterDuff.Mode.SRC_IN)
                 taskActive.buttonTintList = ColorStateList.valueOf(getColor(context, R.color.color_primary))
+            }
+
+            next.setOnClickListener {
+                onNextClicked.invoke(task.uid)
             }
 
             taskActive.setOnCheckedChangeListener { _, isChecked ->

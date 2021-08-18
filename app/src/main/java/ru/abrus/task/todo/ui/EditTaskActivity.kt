@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_add_task.*
@@ -19,9 +20,11 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class AddTaskActivity() : AppCompatActivity() {
+class EditTaskActivity : AppCompatActivity() {
 
     val viewModel: BaseViewModel by viewModels()
+
+    var uid: Int = -1
 
     @Inject
     lateinit var calendar: Calendar
@@ -55,6 +58,20 @@ class AddTaskActivity() : AppCompatActivity() {
         initClicks()
 
         initSpinner()
+
+        observe()
+    }
+
+    private fun observe() {
+        uid = intent.getIntExtra("uid", -1)
+        if (uid == -1)
+            return
+
+        viewModel.getTask(uid) {
+            task = it
+            updateUI()
+        }
+
     }
 
     private fun initSpinner() {
@@ -85,6 +102,11 @@ class AddTaskActivity() : AppCompatActivity() {
     }
 
     private fun initClicks() {
+        deleteTask.setOnClickListener {
+            viewModel.deleteTask(task)
+            finish()
+        }
+
         createTask.setOnClickListener {
             if (task.name.isEmpty()) {
                 nameEdt.error = "Please enter the task title"
@@ -101,7 +123,10 @@ class AddTaskActivity() : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            viewModel.insertTask(task)
+            if (uid == -1)
+                viewModel.insertTask(task)
+            else
+                viewModel.updateTask(uid, task.name, task.date, task.time, task.alarmType)
             finish()
         }
 
@@ -150,5 +175,16 @@ class AddTaskActivity() : AppCompatActivity() {
             calendar.get(Calendar.HOUR_OF_DAY),
             with(calendar.get(Calendar.MINUTE)) { if (this < 10) "0$this" else this }
         )
+    }
+
+    private fun updateUI() {
+        nameEdt.setText(task.name)
+        dateEdt.text = task.date
+        timeEdt.text = task.time
+
+        alarmSpinner.setSelection(task.alarmType)
+
+        deleteTask.isVisible = true
+        createTask.text = getString(R.string.update_task)
     }
 }

@@ -1,10 +1,7 @@
 package ru.abrus.task.todo.storage
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface TaskDao {
@@ -18,7 +15,7 @@ interface TaskDao {
     @Insert
     fun insertTask(task: TaskEntity)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertTasks(vararg tasks: TaskEntity)
 
     @Query("UPDATE task SET name = :name, date = :date, time = :time, alarm = :alarm WHERE uid = :uid")

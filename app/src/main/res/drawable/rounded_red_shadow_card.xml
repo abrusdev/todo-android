@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Shadow layers -->
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="3dp">
+        <shape>
+            <corners android:radius="10dp" />
+            <padding
+                android:bottom="1.8dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="@color/shadow_hack_level_1" />
+        </shape>
+    </item>
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="3dp">
+        <shape>
+            <corners android:radius="10dp" />
+            <padding
+                android:bottom="1.8dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="@color/shadow_hack_level_2" />
+        </shape>
+    </item>
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="3dp">
+        <shape>
+            <corners android:radius="10dp" />
+            <padding
+                android:bottom="1.8dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="@color/shadow_hack_level_3" />
+        </shape>
+    </item>
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="3dp">
+        <shape>
+            <corners android:radius="10dp" />
+            <padding
+                android:bottom="1.8dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="@color/shadow_hack_level_4" />
+        </shape>
+    </item>
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="3dp">
+        <shape>
+            <corners android:radius="10dp" />
+            <padding
+                android:bottom="1.8dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="@color/shadow_hack_level_5" />
+        </shape>
+    </item>
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="3dp">
+        <shape>
+            <corners android:radius="10dp" />
+            <padding
+                android:bottom="1.8dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="@color/shadow_hack_level_6" />
+        </shape>
+    </item>
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="3dp">
+        <shape>
+            <corners android:radius="10dp" />
+            <padding
+                android:bottom="1.8dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="@color/shadow_hack_level_7" />
+        </shape>
+    </item>
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="3dp">
+        <shape>
+            <corners android:radius="10dp" />
+            <padding
+                android:bottom="1.8dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="@color/shadow_hack_level_8" />
+        </shape>
+    </item>
+
+
+    <!-- Background layer -->
+    <item>
+        <shape>
+            <gradient
+                android:endColor="#C31B1B"
+                android:startColor="#DC5F5F"
+                android:angle="135"/>
+
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/navigation_shop"
+        android:id="@+id/menu_home"
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
 
     <item
-        android:id="@+id/navigation_gifts"
+        android:id="@+id/menu_proceed"
         android:icon="@drawable/ic_time"
         android:title="@string/proceeding" />
 
     <item
-        android:id="@+id/navigation_cart"
+        android:id="@+id/menu_preceding"
         android:icon="@drawable/ic_success"
         android:title="@string/done" />
 
