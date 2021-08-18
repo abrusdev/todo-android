@@ -8,4 +8,13 @@
     <color name="color_black">#292929</color>
     <color name="color_grey">#9E9E9E</color>
     <color name="color_hint">#C8C8C8</color>
+
+    <color name="shadow_hack_level_1">#03D776FE</color>
+    <color name="shadow_hack_level_2">#08D776FE</color>
+    <color name="shadow_hack_level_3">#0DD776FE</color>
+    <color name="shadow_hack_level_4">#14D776FE</color>
+    <color name="shadow_hack_level_5">#1AD776FE</color>
+    <color name="shadow_hack_level_6">#21D776FE</color>
+    <color name="shadow_hack_level_7">#26D776FE</color>
+    <color name="shadow_hack_level_8">#2ED776FE</color>
 </resources>
