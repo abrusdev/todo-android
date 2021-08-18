@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -48,9 +49,7 @@ dependencies {
     // CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    implementation 'com.lijiankun24:shadowlayout:1.1.0'
-
-    def nav_version = "2.3.0"
+    def nav_version = "2.3.5"
 
     // Navigation Graph
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/backStyle"
+    tools:context=".AddTaskActivity">
+
+
+    <LinearLayout
+        style="@style/screenStyle"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="9dp"
+                android:rotation="180"
+                android:src="@drawable/ic_next"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                style="@style/boldTextStyle"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/create_task"
+                android:textColor="@color/color_black"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/boldTextStyle"
+            android:layout_marginTop="20dp"
+            android:text="@string/task_title" />
+
+        <EditText
+            android:id="@+id/titleEdt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_white_card"
+            android:drawableStart="@drawable/ic_task"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/roboto"
+            android:hint="Type here"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/color_black"
+            android:textColorHint="@color/color_hint"
+            android:textSize="14sp" />
+
+        <TextView
+            style="@style/boldTextStyle"
+            android:layout_marginTop="20dp"
+            android:text="@string/date" />
+
+        <EditText
+            android:id="@+id/dateEdt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_white_card"
+            android:drawableStart="@drawable/ic_task"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/roboto"
+            android:hint="05 June 2021"
+            android:importantForAutofill="no"
+            android:inputType="datetime"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/color_black"
+            android:textColorHint="@color/color_hint"
+            android:textSize="14sp" />
+
+        <TextView
+            style="@style/boldTextStyle"
+            android:layout_marginTop="20dp"
+            android:text="@string/time" />
+
+        <EditText
+            android:id="@+id/timeEdt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_white_card"
+            android:drawableStart="@drawable/ic_task"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/roboto"
+            android:hint="12.00 AM"
+            android:importantForAutofill="no"
+            android:inputType="time"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/color_black"
+            android:textColorHint="@color/color_hint"
+            android:textSize="14sp" />
+
+        <TextView
+            style="@style/boldTextStyle"
+            android:layout_marginTop="20dp"
+            android:text="@string/alarm" />
+
+        <EditText
+            android:id="@+id/Alarm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_white_card"
+            android:drawableStart="@drawable/ic_task"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/roboto"
+            android:hint="12.00 AM"
+            android:importantForAutofill="no"
+            android:inputType="time"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/color_black"
+            android:textColorHint="@color/color_hint"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_primary_shadow_card"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="@string/create_task"
+            android:textColor="@color/color_white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

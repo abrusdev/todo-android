@@ -5,4 +5,9 @@
     <string name="home">Home</string>
     <string name="proceeding">Proceeding</string>
     <string name="done">Done</string>
+    <string name="create_task">Create Task</string>
+    <string name="task_title">Task title</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="alarm">Alarm</string>
 </resources>

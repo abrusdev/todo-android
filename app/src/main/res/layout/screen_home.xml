@@ -68,28 +68,19 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <com.lijiankun24.shadowlayout.ShadowLayout
+
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:shadowColor="@color/color_primary"
-                app:shadowDx="0dp"
-                app:shadowDy="10dp"
-                app:shadowRadius="4dp"
-                app:shadowShape="rectangle">
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_primary_shadow_card"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:padding="2dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_task" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_primary_gradient_card"
-                    android:clipToPadding="false"
-                    android:nestedScrollingEnabled="false"
-                    android:padding="2dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:itemCount="2"
-                    tools:listitem="@layout/item_task" />
-
-            </com.lijiankun24.shadowlayout.ShadowLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
