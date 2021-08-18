@@ -10,7 +10,7 @@ import ru.abrus.task.todo.R
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    val viewModel: BaseViewModel by viewModels()
+    private val viewModel: BaseViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

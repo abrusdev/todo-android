@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(TaskEntity::class), version = 1)
+@Database(entities = arrayOf(TaskEntity::class), version = 2)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun taskDao(): TaskDao
 
@@ -17,7 +17,7 @@ abstract class AppDatabase : RoomDatabase() {
                 INSTANCE = Room.databaseBuilder(
                     applicationContext,
                     AppDatabase::class.java, "abrus-task"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
             return INSTANCE!!
         }
 

@@ -34,7 +34,7 @@ class AddTaskActivity() : AppCompatActivity() {
 
     private val timeWatcher by lazy {
         TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-            val result = "$hourOfDay:$minute"
+            val result = "$hourOfDay:${with(minute) { if (this < 10) "0$this" else this }}"
             task.time = result
             timeEdt.text = result
         }

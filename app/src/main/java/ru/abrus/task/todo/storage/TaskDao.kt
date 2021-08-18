@@ -24,6 +24,9 @@ interface TaskDao {
     @Query("UPDATE task SET name = :name, date = :date, time = :time, alarm = :alarm WHERE uid = :uid")
     fun updateTask(uid: Int, name: String, date: String, time: String, alarm: Int)
 
+    @Query("UPDATE task SET is_active = :isActive WHERE uid = :uid")
+    fun updateTask(uid: Int, isActive: Boolean)
+
     @Delete
     fun delete(user: TaskEntity)
 }

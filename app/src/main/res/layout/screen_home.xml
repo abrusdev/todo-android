@@ -62,14 +62,15 @@
                     tools:ignore="UnusedAttribute" />
 
                 <TextView
+                    android:id="@+id/taskMonitor"
                     style="@style/boldTextStyle"
                     android:text="@string/s_task_today"
                     android:textColor="@color/color_primary"
                     android:textSize="14sp" />
             </LinearLayout>
 
-
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerActiveTasks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -81,8 +82,8 @@
                 tools:itemCount="2"
                 tools:listitem="@layout/item_task" />
 
-
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerTasks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"

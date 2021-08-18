@@ -11,4 +11,5 @@ data class TaskEntity(
     @ColumnInfo(name = "date") var date: String,
     @ColumnInfo(name = "time") var time: String,
     @ColumnInfo(name = "alarm") val alarmType: Int,
+    @ColumnInfo(name = "is_active") var isActive: Boolean = false
 )

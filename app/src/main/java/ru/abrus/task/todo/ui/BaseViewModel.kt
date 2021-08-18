@@ -26,4 +26,10 @@ class BaseViewModel @Inject constructor(
         }
     }
 
+    fun updateTask(id: Int, isChecked: Boolean) {
+        AsyncTask.execute {
+            dao.updateTask(id,isChecked)
+        }
+    }
+
 }
